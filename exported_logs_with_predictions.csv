@@ -1,0 +1,28 @@
+action,dest_ip,dest_port,server,src_ip,src_port,status,timestamp,password,username,data,predicted_attack_type
+process,0.0.0.0,2222,ssh_server,0.0.0.0,2222,success,2025-07-07T04:23:54.211924,,,,brute_force
+process,0.0.0.0,2121,ftp_server,0.0.0.0,2121,success,2025-07-07T04:23:54.223903,,,,brute_force
+process,0.0.0.0,2525,smtp_server,0.0.0.0,2525,success,2025-07-07T04:23:54.341679,,,,spoofing
+process,0.0.0.0,8080,http_server,0.0.0.0,8080,success,2025-07-07T04:23:54.351471,,,,other
+connection,0.0.0.0,8080,http_server,127.0.0.1,51860,,2025-07-07T04:23:56.569964,,,,brute_force
+POST,0.0.0.0,8080,http_server,127.0.0.1,51860,,2025-07-07T04:23:56.570145,,,,brute_force
+login,0.0.0.0,8080,http_server,127.0.0.1,51860,failed,2025-07-07T04:23:56.570298,' OR '1'='1,admin,,brute_force
+connection,0.0.0.0,8080,http_server,127.0.0.1,51874,,2025-07-07T04:23:57.577892,,,,brute_force
+POST,0.0.0.0,8080,http_server,127.0.0.1,51874,,2025-07-07T04:23:57.578049,,,,brute_force
+login,0.0.0.0,8080,http_server,127.0.0.1,51874,failed,2025-07-07T04:23:57.578465,' OR 1=1--,test,,brute_force
+connection,0.0.0.0,8080,http_server,127.0.0.1,51890,,2025-07-07T04:23:58.584306,,,,brute_force
+POST,0.0.0.0,8080,http_server,127.0.0.1,51890,,2025-07-07T04:23:58.584434,,,,brute_force
+login,0.0.0.0,8080,http_server,127.0.0.1,51890,failed,2025-07-07T04:23:58.584583,admin' --,root,,brute_force
+connection,0.0.0.0,2222,ssh_server,127.0.0.1,37072,,2025-07-07T04:23:59.590574,,,,brute_force
+login,0.0.0.0,2222,ssh_server,127.0.0.1,37072,failed,2025-07-07T04:23:59.646888,toor,root,,brute_force
+connection,0.0.0.0,2222,ssh_server,127.0.0.1,37088,,2025-07-07T04:24:00.648750,,,,brute_force
+login,0.0.0.0,2222,ssh_server,127.0.0.1,37088,failed,2025-07-07T04:24:00.736809,admin123,admin,,brute_force
+connection,0.0.0.0,2222,ssh_server,127.0.0.1,37100,,2025-07-07T04:24:01.738297,,,,brute_force
+login,0.0.0.0,2222,ssh_server,127.0.0.1,37100,failed,2025-07-07T04:24:01.828591,1234,user,,brute_force
+connection,0.0.0.0,2222,ssh_server,127.0.0.1,37108,,2025-07-07T04:24:02.829992,,,,brute_force
+login,0.0.0.0,2222,ssh_server,127.0.0.1,37108,success,2025-07-07T04:24:02.882721,test,test,,brute_force
+connection,0.0.0.0,2121,ftp_server,127.0.0.1,56888,,2025-07-07T04:24:03.889425,,,,brute_force
+login,0.0.0.0,2121,ftp_server,127.0.0.1,56888,success,2025-07-07T04:24:03.891399,test,test,,brute_force
+connection,0.0.0.0,2525,smtp_server,127.0.0.1,33042,,2025-07-07T04:24:03.896804,,,,spoofing
+connection,0.0.0.0,2525,smtp_server,127.0.0.1,33042,,2025-07-07T04:24:03.900411,,,"{""arg"": ""FROM:<spoof@victim.com>"", ""command"": ""mail"", ""data"": ""None""}",brute_force
+connection,0.0.0.0,2525,smtp_server,127.0.0.1,33042,,2025-07-07T04:24:03.901634,,,"{""arg"": ""TO:<admin@target.com>"", ""command"": ""rcpt"", ""data"": ""None""}",brute_force
+connection,0.0.0.0,2525,smtp_server,127.0.0.1,33042,,2025-07-07T04:24:03.902099,,,"{""arg"": ""None"", ""command"": ""data"", ""data"": ""None""}",brute_force
